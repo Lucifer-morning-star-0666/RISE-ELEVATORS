@@ -1,0 +1,433 @@
+RISE ELEVATORS
+ Product Requirements Document
+Website Development — HTML / CSS / JS
+Client
+Rise Elevators — Charanjit Bhatti (Founder & Director)
+Tech Stack
+HTML5 · CSS3 · Vanilla JavaScript
+Version
+1.0
+Date
+May 2026
+Contact
+contact@riseelevators.in  |  +91 92172 53635
+Address
+Sunder Chak Road, Malikpur, Pathankot – 145025 (Punjab), INDIA
+  ■  Safe    Reliable    Affordable Elevators  ■
+
+Table of Contents
+1. Project Overview
+2. Goals & Success Metrics
+3. Target Audience
+4. Site Architecture & Pages
+5. Section-by-Section Requirements
+6. UI / UX Design System
+7. Components Library
+8. Functional Requirements
+9. Non-Functional Requirements
+10. SEO & Performance
+11. File & Folder Structure
+12. Milestones & Delivery
+
+1. Project Overview
+Rise Elevators is a Pathankot-based elevator company offering installation, maintenance, AMC, and
+modernisation services across Punjab. The goal is to build a modern, mobile-friendly, single-brand website
+using pure HTML, CSS, and JavaScript — no frameworks — that showcases their products, builds trust, and
+generates leads.
+Client
+Rise Elevators
+Brand Tone
+Professional · Trustworthy · Bold
+Tech Stack
+HTML5 · CSS3 · Vanilla JS (ES6+)
+Responsive
+Mobile-first; breakpoints: 480px / 768px / 1024px / 1280px
+Browser Sup.
+Chrome, Firefox, Safari, Edge (last 2 versions)
+Hosting
+Any static host (Netlify, cPanel, GitHub Pages)
+2. Goals & Success Metrics
+Primary Goals
+ Establish a professional online presence for Rise Elevators.
+ Showcase all product categories with descriptions and visuals.
+ Drive enquiries via WhatsApp, phone calls, and a contact form.
+ Rank on Google for local elevator-related searches in Pathankot / Punjab.
+Success Metrics
+Metric
+Target
+Mobile PageSpeed Score
+≥ 85
+Desktop PageSpeed Score
+≥ 90
+Time to First Contentful Paint
+< 2 s
+Lead form submissions / month
+10+ after 3 months
+Bounce Rate
+< 60%
+WhatsApp click-throughs / month
+20+
+
+3. Target Audience
+Segment
+Description
+Key Need
+Homeowners
+Families building/renovating homes, elderly residents
+Home lift info & pricing
+Builders / Developers
+Residential & commercial construction companies
+Bulk orders, specs, compliance
+Hospital Admins
+Hospital procurement teams in Punjab
+Stretcher lift specs & reliability
+Factory / Warehouse Owners
+Industrial operators needing freight lifts
+Load capacity, safety certs
+Existing Clients
+Customers seeking AMC or modernisation
+Quick contact & service details
+4. Site Architecture & Pages
+The website is a single HTML file with smooth-scroll anchor navigation, supplemented by a lightweight JS
+router for a clean URL experience. All pages live in one file to avoid server config complexity.
+Page / Section
+Anchor
+Purpose
+Home (Hero)
+#home
+First impression, tagline, CTA buttons
+About Us
+#about
+Company story, founder, values
+Products
+#products
+All elevator categories with cards
+Services
+#services
+Installation · Maintenance · AMC · Modernisation
+Why Choose Us
+#why-us
+USPs, stats counter, certifications
+Gallery
+#gallery
+Image grid of projects
+Testimonials
+#testimonials
+Client quotes
+Contact
+#contact
+Form + map + WhatsApp float button
+Footer
+—
+Links, social icons, copyright
+
+5. Section-by-Section Requirements
+5.1 Sticky Navigation Bar
+ Logo (Rise Elevators SVG/PNG) on the left.
+ Nav links: Home · About · Products · Services · Why Us · Gallery · Contact.
+ Hamburger menu on mobile (CSS-only toggle with JS fallback).
+ Active link highlighted in orange on scroll (IntersectionObserver).
+ 'Get a Quote' CTA button — orange pill, opens contact section.
+ Background turns navy + box-shadow after scrolling 80 px.
+5.2 Hero Section
+ Full-viewport-height background — dark overlay on elevator image.
+ Headline: 'Where Innovation Meets Elevation' (from brand document).
+ Sub-headline: 'Safe · Reliable · Affordable Elevators in Punjab'.
+ Two CTAs: 'Explore Products' (navy) and 'WhatsApp Us' (green #25D366).
+ Animated counter strip below hero: Years of Experience · Projects Completed · Cities Served · Happy
+Clients.
+5.3 About Section
+ Two-column layout: text left, founder photo + brand card right.
+ Company overview from brochure — mission-driven copy.
+ Founder card: Charanjit Bhatti, Founder & Director.
+ Small trust badges: 'Indian Standards Certified', 'Factory Act Compliant'.
+5.4 Products Section
+ Section title + orange underline accent.
+ 6 product cards in a responsive CSS Grid (3-col → 2-col → 1-col).
+ Each card: icon/image, product name, short description, 'Learn More' button.
+ Products: Home Lift · Goods & Freight Elevator · Hospital/Stretcher Elevator · Hydraulic Elevator ·
+Passenger Elevator · Glass/Panoramic Elevator.
+ 'Learn More' triggers a modal/drawer with full description from brochure.
+5.5 Services Section
+ Icon + title + one-line description for each service.
+ 4 services in a 2×2 or 4-col row: Lift Installation · Maintenance & Repair · AMC (Annual Maintenance
+Contract) · Lift Modernisation.
+ Each service card has a hover lift shadow and orange icon.
+5.6 Why Choose Us
+ 3–4 feature blocks: Noiseless & Easy Install · Small Space Required · Safety Certified · 24/7 Support.
+ Animated number counters (triggered when section enters viewport): 500+ Projects · 10+ Years · 50+
+Cities · 100% Safety Record.
+5.7 Gallery Section
+ Masonry or uniform grid of 8–12 project images.
+
+ Lightbox on click (vanilla JS — no library required).
+ Filter tabs: All · Home Lifts · Commercial · Hospital · Industrial.
+5.8 Testimonials
+ Auto-sliding carousel (CSS transitions + JS interval).
+ Pause on hover. Prev/Next arrows. Dot indicators.
+ Each card: quote, client name, city, star rating.
+5.9 Contact Section
+ Left column: contact form (Name · Phone · Email · Product Interest dropdown · Message · Submit).
+ Right column: address card, phone numbers, email, Google Maps embed (iframe).
+ Floating WhatsApp button (bottom-right) — always visible on all pages.
+ Form validation in JS — no empty required fields; phone must be 10 digits.
+ On successful submit: success toast notification (no backend needed — mailto or Formspree).
+5.10 Footer
+ Dark navy background.
+ 3 columns: Brand info · Quick Links · Contact Details.
+ Social icons: WhatsApp · Facebook · Instagram.
+ Bottom strip: © 2025 Rise Elevators. All Rights Reserved.
+
+6. UI / UX Design System
+6.1 Colour Palette
+Token
+Hex Value
+Usage
+--primary
+#1a2a4a
+Navy — headers, navbar, footer
+--accent
+#f5a623
+Orange — CTAs, highlights, icons
+--white
+#ffffff
+Backgrounds, card text
+--light-bg
+#f4f6f9
+Section alternating background
+--text-dark
+#222222
+Body copy
+--text-muted
+#666666
+Captions, meta text
+--whatsapp
+#25D366
+WhatsApp floating button
+--danger
+#e74c3c
+Form error states
+6.2 Typography
+Role
+Font
+Size / Weight
+Display Heading
+'Montserrat', sans-serif
+40–56px / 800
+Section Heading
+'Montserrat', sans-serif
+28–36px / 700
+Sub-heading
+'Montserrat', sans-serif
+18–22px / 600
+Body Text
+'Open Sans', sans-serif
+15–16px / 400
+Button / Label
+'Open Sans', sans-serif
+14px / 600 uppercase
+Caption
+'Open Sans', sans-serif
+12px / 400 italic
+6.3 Spacing & Layout
+ Base unit: 8 px. All spacing multiples of 8 (8, 16, 24, 32, 48, 64, 80, 96).
+ Max content width: 1200 px, centred with auto margins.
+ Section padding: 80px top/bottom desktop · 48px mobile.
+ Border-radius: buttons 6px · cards 12px · modals 16px.
+6.4 Animation Guidelines
+ Use CSS transitions for hover/focus — duration 250–350 ms, ease-out.
+ Scroll animations: 'fade-up' via IntersectionObserver — stagger 100 ms per card.
+ Counter animation: requestAnimationFrame, 1.5 s duration.
+ Carousel: CSS translateX + JS class toggle — no jQuery.
+ Respect prefers-reduced-motion — disable non-essential animations.
+
+7. Components Library
+Component
+File / ID
+Description
+Navbar
+#navbar
+Sticky, scroll-aware, hamburger mobile
+Hero Banner
+#hero
+Full-height, overlay, animated counters
+Product Card
+.product-card
+Image · title · desc · CTA — grid layout
+Product Modal
+#product-modal
+Overlay drawer, close on ESC / backdrop click
+Service Card
+.service-card
+Icon top, title, description, hover shadow
+Stats Counter
+.counter
+JS countUp on viewport entry
+Gallery Grid
+#gallery
+CSS masonry or uniform grid + lightbox
+Testimonial Slider
+.testimonial-wrap
+Auto-play carousel, prev/next, dots
+Contact Form
+#contact-form
+JS validation, Formspree or mailto action
+WhatsApp FAB
+#whatsapp-fab
+Fixed bottom-right, pulse animation
+Toast Notification
+.toast
+Success/error, auto-dismiss 4 s
+Back-to-Top
+#back-to-top
+Appears after 300px scroll
+Footer
+#footer
+3-col grid, social links, copyright
+
+8. Functional Requirements
+ID
+Requirement
+Priority
+FR-01
+Smooth-scroll to anchor on nav link click
+Must
+FR-02
+Mobile hamburger menu opens/closes correctly
+Must
+FR-03
+Active nav link updates on scroll (IntersectionObserver)
+Must
+FR-04
+Navbar background changes on scroll > 80px
+Must
+FR-05
+Counter animation triggers on viewport entry
+Must
+FR-06
+Product modal opens with correct content on 'Learn More' click
+Must
+FR-07
+Modal closes on backdrop click, close button, or ESC key
+Must
+FR-08
+Gallery filter tabs show/hide images by category
+Must
+FR-09
+Lightbox opens full image on gallery item click
+Must
+FR-10
+Testimonial carousel auto-advances every 5 s, pauses on hover
+Must
+FR-11
+Contact form validates: required fields, email format, 10-digit phone
+Must
+FR-12
+Floating WhatsApp button opens wa.me link with pre-filled message
+Must
+FR-13
+Back-to-top button appears after 300 px scroll, scrolls to top
+Should
+FR-14
+Success toast shown after form submit
+Should
+FR-15
+Fade-up animation on cards when they enter viewport
+Should
+FR-16
+Cookie-free Google Maps iframe embed in Contact section
+Should
+FR-17
+All phone numbers are tel: links (tap to call on mobile)
+Must
+FR-18
+All email addresses are mailto: links
+Must
+
+9. Non-Functional Requirements
+Category
+Requirement
+Performance
+LCP < 2.5 s on 4G; images lazy-loaded; WebP format preferred
+Accessibility
+WCAG 2.1 AA — alt text, ARIA labels, keyboard navigable
+Security
+No inline event handlers; CSP-friendly; Formspree for form
+Maintainability
+CSS custom properties for all colours/spacing; commented JS
+Compatibility
+IE-11 not required; ES6+ OK; CSS Grid & Flexbox used freely
+Scalability
+Modular JS in functions — easy to add products or sections
+Reliability
+Graceful degradation if JS disabled (all content still visible)
+10. SEO & Performance
+Meta Tags (in )
+<title>Rise Elevators | Safe & Reliable Elevators in Pathankot, Punjab</title>
+<meta name="description" content="Rise Elevators — Home lifts, Goods lifts, Hospital
+lifts, Hydraulic lifts. Installation, AMC & Modernisation in Punjab. Call +91 92172
+53635">
+<meta name="keywords" content="elevator company Pathankot, lift installation Punjab,
+home lift, hospital elevator, AMC lift service">
+<meta property="og:title" content="Rise Elevators — Where Innovation Meets Elevation">
+<link rel="canonical" href="https://www.riseelevators.in/">
+Local SEO
+ Include full NAP (Name, Address, Phone) in footer — consistent with Google Business Profile.
+ Embed Google Maps with 'Rise Elevators' marker.
+ Add LocalBusiness JSON-LD schema in .
+ Use location keywords naturally: Pathankot, Punjab, Malikpur in H1/H2.
+Performance Checklist
+ Use <img loading='lazy'> for all below-fold images.
+ Serve images in WebP, fallback to JPEG.
+ Minify CSS and JS before deployment (use Terser / CSSNano).
+ Use Google Fonts with display=swap and preconnect.
+ Avoid render-blocking scripts — all JS at end of body or defer attribute.
+
+11. File & Folder Structure
+rise-elevators/
+■■■ index.html
+■■■ css/
+■ ■■■ style.css ← Main stylesheet (custom properties, layout)
+■ ■■■ animations.css ← Scroll fade-ins, counter, carousel transitions
+■■■ js/
+■ ■■■ main.js ← Navbar scroll, smooth-scroll, back-to-top
+■ ■■■ products.js ← Product data array + modal render
+■ ■■■ gallery.js ← Filter tabs + lightbox
+■ ■■■ carousel.js ← Testimonial auto-slider
+■ ■■■ form.js ← Validation + submit handler
+■■■ images/
+■ ■■■ logo.png
+■ ■■■ hero-bg.jpg ← Compressed hero background
+■ ■■■ products/ ← One image per product (WebP)
+■ ■■■ gallery/ ← Project photos
+■■■ fonts/ ← (optional — if self-hosting Google Fonts)
+■■■ favicon.ico
+12. Milestones & Delivery
+#
+Milestone
+Deliverable
+M1
+HTML structure complete
+Semantic index.html skeleton
+M2
+CSS design system + hero + navbar
+Styled hero, sticky nav
+M3
+Products, Services, About sections
+All static sections styled
+M4
+Gallery, Testimonials, Contact sections
+Interactive JS components
+M5
+JS functionality (modal, lightbox, form, FAB)
+All FR-xx items passing
+M6
+SEO, meta tags, schema, performance optimisation
+Lighthouse ≥ 85 mobile
+M7
+Cross-browser QA + client review
+Bug-fix pass, content swap
+M8
+Final delivery + deployment guide
+Live URL + source code ZIP
+  This PRD is a living document. Update it as requirements evolve and share change-log notes with the client before implementing scope changes.  

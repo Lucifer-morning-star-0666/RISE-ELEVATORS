@@ -1,0 +1,80 @@
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 550ms ease,
+    transform 550ms ease;
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counter-card,
+.service-card,
+.product-card,
+.gallery-card,
+.feature-card {
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease,
+    opacity 550ms ease,
+    transform 550ms ease;
+}
+
+.whatsapp-fab,
+.map-fab {
+  animation: contactFabPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes contactFabPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 120% 0;
+  }
+
+  100% {
+    background-position: -20% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-orb {
+    transition: none;
+  }
+
+  .skeleton-media,
+  .skeleton-line,
+  .skeleton-pill {
+    animation: none;
+  }
+}

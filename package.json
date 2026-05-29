@@ -1,0 +1,10 @@
+{
+  "name": "rise-elevator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for Rise Elevators",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
